@@ -15,7 +15,7 @@
   .card-signin .card-title {
     margin-bottom: 2rem;
     font-weight: 300;
-    font-size: 1.5rem;
+    
   }
   
   .card-signin .card-img-left {
@@ -34,6 +34,7 @@
   }
   
   .form-signin .btn {
+    
     font-size: 80%;
     border-radius: 5rem;
     letter-spacing: .1rem;
@@ -94,6 +95,4 @@
     color: #777;
   }
   
-  .h1{
-      color:brown
-  }
+  

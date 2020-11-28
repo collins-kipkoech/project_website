@@ -12,13 +12,13 @@
             <div class="card card-signin flex-row my-5">
             
                 <div class="card-body">
-                <h5 class="card-title text-center">Register</h5>
+                <h5 class="card-title text-center">LOGIN</h5>
                 <hr>
                 <form class="form-signin" method="POST">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
-                    <a class="d-block text-center mt-2 small" href="{% url 'login' %}">Sign In</a>
+                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Login</button>
+                    <a class="d-block text-center mt-2 small" href="{% url 'register' %}">Register</a>
                     <hr class="my-4">
                 </form>
                 </div>
