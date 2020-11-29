@@ -21,5 +21,7 @@ def register_user(request):
     }
     return render(request,'users/register.html',context)
 
-
+@login_required
+def profile_view(request):
+    return render(request,'users/profile.html')
 

@@ -3,6 +3,7 @@ from .models import Projects
 from .forms import PostProjectsForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from cloudinary.forms import cl_init_js_callbacks
 
 
 # Create your views here.
@@ -23,7 +24,7 @@ def project_details(request,id):
 def post_project(request):
     if request.method == 'POST':
         print(request.POST)
-        form = PostProjectsForm(request.POST or None)
+        form = PostProjectsForm(request.POST,request.FILES)
         if form.is_valid():
             addProject = form.save(commit=False)
             addProject.save()
