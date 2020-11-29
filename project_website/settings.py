@@ -156,9 +156,9 @@ LOGIN_URL = 'login'
 
 
 cloudinary.config( 
-  cloud_name = "dtydg6xpa", 
-  api_key = "568552354739641", 
-  api_secret = "plPkmm4WcrylYnuoJxu3gSNNTuI" 
+  cloud_name="dtydg6xpa", 
+  api_key="568552354739641", 
+  api_secret="plPkmm4WcrylYnuoJxu3gSNNTuI" 
 )
 
 # Static files (CSS, JavaScript, Images)
