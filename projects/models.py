@@ -15,3 +15,8 @@ class Projects(models.Model):
 
     class Meta:
         ordering = ['-date_posted']
+
+
+class ProjectsApi(models.Model):
+    title = models.CharField(max_length=40)
+    description = models.TextField()

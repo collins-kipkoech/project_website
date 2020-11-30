@@ -4,6 +4,10 @@ from .forms import PostProjectsForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from cloudinary.forms import cl_init_js_callbacks
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .models import  ProjectsApi
+from .serializer import ApiSerializer
 
 
 # Create your views here.
@@ -41,3 +45,10 @@ def post_project(request):
         form = PostProjectsForm()
     context = {'form':form,}
     return render(request,'projects/post_projects.html',context)
+
+
+class ProjectsList(APIView):
+    def get(self, request, format=None):
+        all_projects = ProjectsApi.objects.all()
+        serializers = ApiSerializer(all_projects, many=True)
+        return Response(serializers.data)
