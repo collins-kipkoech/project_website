@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 def register_user(request):
     if request.method == 'POST':
-        form = RegisterUserForm(request.POST)
+        form = RegisterUserForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request,'Your account has been created successfully')
