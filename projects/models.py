@@ -52,3 +52,5 @@ class Review(models.Model):
     project = models.ForeignKey(Projects, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
     rate = models.PositiveSmallIntegerField(choices=RATE_CHOICES)
+
+   

@@ -26,12 +26,21 @@ def index(request):
 
 def project_details(request,id):
     project = get_object_or_404(Projects,id=id)
-    reviews = get_object_or_404(Review,id=id)
+    
     context = {
         'project':project,
-        'reviews':reviews,
+        
     }
     return render(request,'projects/details.html',context)
+
+def projects_reviews(request,id):
+    reviews = get_object_or_404(Review,id=id)
+    context = {
+        'reviews':reviews,
+
+    }
+    return render(request,'projects/details.html',context)
+
 
 @login_required
 def rate_project(request, pk):
