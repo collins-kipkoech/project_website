@@ -4,8 +4,9 @@
 <div class="card mb-3">
     <img src="{{ project.image.url }}" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{ project.title }}</h5>
-      <p class="card-text">{{ project.description }}</p>
+      <h5 class="card-title">Project Title: {{ project.title }}</h5>
+      <p class="card-text">Project Description:{{ project.description }}</p>
+      <p class="card-text">Ratings: {{ reviews.rate }}</p>
       <p class="card-text"><small class="text-muted">Posted on {{ project.date_posted}}</small></p>
     </div>
   </div>

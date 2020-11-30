@@ -4,4 +4,4 @@ from .models import ProjectsApi
 class ApiSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProjectsApi
-        fields = ('title', 'description')
+        fields = ('id','title', 'description')

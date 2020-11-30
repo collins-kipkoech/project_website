@@ -4,10 +4,20 @@ from django.utils import timezone
 from cloudinary.models import CloudinaryField
 
 # Create your models here.
+
+class Rating(models.Model):
+    source = models.CharField(max_length=50)
+    rating = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.source
+
+
 class Projects(models.Model):
     image = CloudinaryField('image')
     title = models.CharField(max_length=120)
-    description = models.TextField()    
+    description = models.TextField() 
+    ratings = models.ManyToManyField(Rating, blank=True)   
     date_posted = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
@@ -17,6 +27,28 @@ class Projects(models.Model):
         ordering = ['-date_posted']
 
 
+
+
 class ProjectsApi(models.Model):
     title = models.CharField(max_length=40)
     description = models.TextField()
+
+
+RATE_CHOICES = [
+	(1, '1 - Trash'),
+	(2, '2 - Horrible'),
+	(3, '3 - Terrible'),
+	(4, '4 - Bad'),
+	(5, '5 - OK'),
+	(6, '6 - Watchable'),
+	(7, '7 - Good'),
+	(8, '8 - Very Good'),
+	(9, '9 - Perfect'),
+	(10, '10 - Master Piece'), 
+]
+
+class Review(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    project = models.ForeignKey(Projects, on_delete=models.CASCADE)
+    date = models.DateTimeField(auto_now_add=True)
+    rate = models.PositiveSmallIntegerField(choices=RATE_CHOICES)
