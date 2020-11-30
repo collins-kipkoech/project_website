@@ -40,11 +40,11 @@ RATE_CHOICES = [
 	(3, '3 - Terrible'),
 	(4, '4 - Bad'),
 	(5, '5 - OK'),
-	(6, '6 - Watchable'),
+	(6, '6 - Nice'),
 	(7, '7 - Good'),
 	(8, '8 - Very Good'),
 	(9, '9 - Perfect'),
-	(10, '10 - Master Piece'), 
+	(10, '10 - Excellent'), 
 ]
 
 class Review(models.Model):
