@@ -23,7 +23,7 @@ def index(request):
         'projects': projects,
     }
     return render(request,'projects/index.html',context)
-@login_required
+
 def project_details(request,id):
     project = get_object_or_404(Projects,id=id)
     reviews = get_object_or_404(Review,id=id)

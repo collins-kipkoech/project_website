@@ -1,6 +1,6 @@
 {% extends 'projects/base.html' %}
 
-
+{% load static %}
 
 {% block content %}
       <!--   Icon Section   -->
@@ -20,6 +20,8 @@
               <br>
               <div class="divider"></div>
               <br>
+              <p style="color: darkslateblue;">Rate the Project based on design, Usability and content</p>
+              <br>
               <form method="post" action="" role="form" class="col s12">
                 {% csrf_token %}
                <div class="input-field col s12">
@@ -28,7 +30,7 @@
               <br>
              
 
-              <button type="submit" name="action" class="waves-effect waves-light btn btn-info"><i class="material-icons left">star</i>Rate</button>
+              <button type="submit" name="action" class="waves-effect waves-light btn btn-info"><i class="material-icons left">Rate</button>
             </form>
             </div>
           </div>
