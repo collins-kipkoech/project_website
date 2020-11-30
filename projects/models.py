@@ -17,6 +17,7 @@ class Projects(models.Model):
     image = CloudinaryField('image')
     title = models.CharField(max_length=120)
     description = models.TextField() 
+    link = models.CharField(max_length=500)
     ratings = models.ManyToManyField(Rating, blank=True)   
     date_posted = models.DateTimeField(default=timezone.now)
 

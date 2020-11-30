@@ -5,13 +5,13 @@ from .models import Profile
 
 
 class RegisterUserForm(UserCreationForm):
-    image = forms.ImageField()
+    
     email = forms.EmailField()
     description = forms.CharField()
 
     class Meta:
         model = User
-        fields = ['image','username','email','description','password1','password2']
+        fields = ['username','email','description','password1','password2']
 
 
 
