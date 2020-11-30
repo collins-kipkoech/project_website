@@ -8,8 +8,13 @@ from cloudinary.forms import cl_init_js_callbacks
 
 # Create your views here.
 def index(request):
+    projects = Projects.objects.all()
+    query = request.GET.get('q')
+    if query:
+        projects = projects.filter(title__icontains=query)
+
     context = {
-        'projects': Projects.objects.all()
+        'projects': projects,
     }
     return render(request,'projects/index.html',context)
 
