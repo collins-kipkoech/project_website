@@ -2,7 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from cloudinary.models import CloudinaryField
-
+from django.contrib.contenttypes.fields import GenericRelation
+from star_ratings.models import Rating
 # Create your models here.
 
 class Rating(models.Model):
@@ -18,7 +19,7 @@ class Projects(models.Model):
     title = models.CharField(max_length=120)
     description = models.TextField() 
     link = models.CharField(max_length=500)
-    ratings = models.ManyToManyField(Rating, blank=True)   
+    ratings = GenericRelation(Rating, related_query_name='projects')
     date_posted = models.DateTimeField(default=timezone.now)
 
     def __str__(self):

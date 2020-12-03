@@ -72,6 +72,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'cloudinary',
     'rest_framework',
+    'star_ratings',
     'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -117,7 +118,7 @@ WSGI_APPLICATION = 'project_website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-
+STAR_RATINGS_RANGE=10
 
 
 # Password validation
