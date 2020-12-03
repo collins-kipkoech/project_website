@@ -1,15 +1,17 @@
 {% extends 'projects/base.html' %}
+{%load static%}
 {% block content %}
 
 <div class="card" style="width: 30rem;">
-    <img src="{{ user.profile.image.url }}" class="card-img-top" alt="..." style="width: 300px; height: 300px;">
+    <img src="{{ request.user.profile.image.url|default:'avatar.png'}}" class="card-img-top" alt="..." style="width: 300px; height: 300px;">
     <div class="card-body">
       <h5 class="card-title">Name: {{ user.username }}</h5>
       
     </div>
     <ul class="list-group list-group-flush">
+      <li>{{ request.user.profile.image }}</li>
       <li class="list-group-item">Contact: {{ user.email }}</li>
-      <li class="list-group-item">Bio: {{ user.profile.description }}</li>
+      <li class="list-group-item">Bio: {{ request.user.profile.id }}</li>
       
       
       

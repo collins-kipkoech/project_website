@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib import messages
 from .forms import RegisterUserForm
 from django.contrib.auth.decorators import login_required
-
+from .models import Profile
 # Create your views here.
 def register_user(request):
     if request.method == 'POST':
@@ -23,5 +23,6 @@ def register_user(request):
 
 @login_required
 def profile_view(request):
+    profile=Profile.objects.get(user=request.user.id)
     return render(request,'users/profile.html')
 
